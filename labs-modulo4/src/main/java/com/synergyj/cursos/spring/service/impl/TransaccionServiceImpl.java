@@ -17,7 +17,8 @@ public class TransaccionServiceImpl implements TransaccionService {
 	/**
 	 * Logger para todas las instancias de la clase
 	 */
-	private static final Logger log = LoggerFactory.getLogger(TransaccionServiceImpl.class);
+	private static final Logger log = LoggerFactory
+			.getLogger(TransaccionServiceImpl.class);
 
 	@Override
 	public String getString(String fooName) {
@@ -26,7 +27,8 @@ public class TransaccionServiceImpl implements TransaccionService {
 	}
 
 	@Override
-	public String getMoreStrings(String fooName, String barName) throws BusinessException {
+	public String getMoreStrings(String fooName, String barName)
+			throws BusinessException {
 		log.debug("Antes de la excepcion... ?:)");
 		throw new BusinessException("Negocio fallo");
 	}

@@ -31,7 +31,8 @@ public class TransaccionServiceAnotacionesImpl implements TransaccionService {
 
 	@Override
 	// TODO C) configurar transaccion
-	public String getMoreStrings(String fooName, String barName) throws BusinessException {
+	public String getMoreStrings(String fooName, String barName)
+			throws BusinessException {
 		logger.debug("Antes de la excepcion... ?:)");
 		throw new BusinessException("Negocio fallo");
 	}

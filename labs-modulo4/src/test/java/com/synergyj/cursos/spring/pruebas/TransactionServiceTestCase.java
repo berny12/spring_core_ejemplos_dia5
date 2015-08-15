@@ -20,10 +20,12 @@ import com.synergyj.cursos.spring.service.BusinessException;
 import com.synergyj.cursos.spring.service.TransaccionService;
 
 /**
- * TestCase empleado para ilustrar las diferentes estrategias para configurar transacciones en
- * Spring.
+ * TestCase empleado para ilustrar las diferentes estrategias para configurar
+ * transacciones en Spring.
+ * 
  * @author Jorge Rodríguez Campos (jorge.rodriguez@synergyj.com)
  */
+
 @RunWith(SpringJUnit4ClassRunner.class)
 // @ContextConfiguration("/sinTransaccionesAppContext.xml")
 // @ContextConfiguration("/txAppContext.xml")
@@ -33,14 +35,15 @@ public class TransactionServiceTestCase {
 	/**
 	 * Logger para todas las instancias de la clase
 	 */
-	private static final Logger logger = LoggerFactory.getLogger(TransactionServiceTestCase.class);
+	private static final Logger logger = LoggerFactory
+			.getLogger(TransactionServiceTestCase.class);
 
 	@Resource
 	private TransaccionService transaccionService;
 
 	/**
-	 * El metodo getString lanza {@link UnsupportedOperationException} (Runtime), bajo un ambiente
-	 * transaccional normal se esperaría un rollback
+	 * El metodo getString lanza {@link UnsupportedOperationException}
+	 * (Runtime), bajo un ambiente transaccional normal se esperaría un rollback
 	 */
 	@Test(expected = UnsupportedOperationException.class)
 	public void getString() {
@@ -59,9 +62,10 @@ public class TransactionServiceTestCase {
 	}
 
 	/**
-	 * El método getMorestrings lanza {@link BusinessException}. En un ambiente transaccional común.
-	 * este tipo de excepciones no provocan rollback, pero en Spring podemos modificar ese
-	 * comportamiento
+	 * El método getMorestrings lanza {@link BusinessException}. En un ambiente
+	 * transaccional común. este tipo de excepciones no provocan rollback, pero
+	 * en Spring podemos modificar ese comportamiento
+	 * 
 	 * @throws BusinessException
 	 */
 	@Test(expected = BusinessException.class)

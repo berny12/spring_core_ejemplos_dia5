@@ -24,6 +24,7 @@ import com.synergyj.cursos.spring.service.ClienteService;
 /**
  * @author Jorge Rodríguez Campos (jorge.rodriguez@synergyj.com)
  */
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("/txProgramaticasAppContext.xml")
 public class TransaccionesProgramaticasTestCase {
