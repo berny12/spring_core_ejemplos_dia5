@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<typedef class="com.synergyj.bookmule.persistence.repository.hibernate.GenericEnumUserType"
+		name="statusLibro">
+		<param name="enumClassName">com.synergyj.bookmule.core.domain.catalog.StatusLibro</param>
+	</typedef>
+	<typedef class="com.synergyj.bookmule.persistence.repository.hibernate.GenericEnumUserType"
+		name="categoria">
+		<param name="enumClassName">com.synergyj.bookmule.core.domain.catalog.Categoria</param>
+	</typedef>
+	<typedef class="com.synergyj.bookmule.persistence.repository.hibernate.GenericEnumUserType"
+		name="tipoCliente">
+		<param name="enumClassName">com.synergyj.bookmule.core.domain.catalog.TipoCliente</param>
+	</typedef>
+	<typedef class="com.synergyj.bookmule.persistence.repository.hibernate.GenericEnumUserType"
+		name="tipoTarjeta">
+		<param name="enumClassName">com.synergyj.bookmule.core.domain.catalog.TipoTarjeta</param>
+	</typedef>
+	<typedef class="com.synergyj.bookmule.persistence.repository.hibernate.GenericEnumUserType"
+		name="statusOrdenCompra">
+		<param name="enumClassName">com.synergyj.bookmule.core.domain.catalog.StatusOrdenCompra</param>
+	</typedef>
+	<typedef class="com.synergyj.bookmule.persistence.repository.hibernate.GenericEnumUserType"
+		name="statusPedido">
+		<param name="enumClassName">com.synergyj.bookmule.core.domain.catalog.StatusPedido</param>
+	</typedef>
+</hibernate-mapping>

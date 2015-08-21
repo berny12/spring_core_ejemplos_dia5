@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.synergyj.bookmule.core.domain">
+	<class name="Promocion" table="PROMOCION">
+		<id name="id" column="PROMOCION_ID">
+			<generator class="identity" />
+		</id>
+		<property name="nombre" column="NOMBRE" />
+		<property name="descripcion" column="DESCRIPCION" />
+		<property name="expresion" column="EXPRESION" />
+		<property name="fechaInicio" column="FECHA_INICIO" />
+		<property name="fechaFin" column="FECHA_FIN" />
+		<property name="descuento" column="DESCUENTO" />
+	</class>
+</hibernate-mapping>

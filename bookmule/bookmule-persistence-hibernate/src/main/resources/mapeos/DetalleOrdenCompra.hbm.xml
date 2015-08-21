@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.synergyj.bookmule.core.domain">
+	<class name="DetalleOrdenCompra" table="DETALLE_ORDEN">
+		<id name="id" column="DETALLE_ORDEN_ID">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="libro" class="Libro" column="LIBRO_ID" cascade="none" />
+		<property name="cantidad" column="CANTIDAD" />
+		<property name="costoUnitario" column="COSTO_UNITARIO" />
+		<many-to-one name="promocion" class="Promocion" column="PROMOCION_ID" cascade="none" />
+	</class>
+</hibernate-mapping>

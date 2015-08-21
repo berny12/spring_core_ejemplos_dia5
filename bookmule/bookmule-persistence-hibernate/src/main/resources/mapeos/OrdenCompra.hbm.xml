@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.synergyj.bookmule.core.domain">
+	<class name="OrdenCompra" table="ORDEN_COMPRA">
+		<id name="id" column="ORDEN_COMPRA_ID">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="cliente" class="Cliente" cascade="none" column="CLIENTE_ID" />
+		<property name="fechaStatus" column="FECHA_STATUS" />
+		<set name="detalleOrdenCompra" cascade="save-update" lazy="true">
+			<key column="ORDEN_COMPRA_ID" />
+			<one-to-many class="DetalleOrdenCompra" />
+		</set>
+		<property name="statusOrdenCompra" type="statusOrdenCompra" />
+		<property name="seguimientoEntregaId" column ="SEGUIMIENTO_ENTREGA_ID" />
+	</class>
+</hibernate-mapping>

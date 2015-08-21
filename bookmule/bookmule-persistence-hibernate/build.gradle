@@ -1,0 +1,15 @@
+dependencies{
+	compile project(':bookmule-core-domain')
+	compile project(':bookmule-persistence')
+		
+	compile "org.springframework:spring-context:$springVersion"
+	compile "org.springframework:spring-tx:$springVersion"
+	compile "org.springframework:spring-orm:$springVersion"
+	compile "org.hibernate:hibernate-core:$hibernateVersion"
+
+	runtime "com.h2database:h2:$h2Version"
+	runtime "commons-dbcp:commons-dbcp:$commonsDbcpVersion"
+
+	testCompile "org.springframework:spring-test:$springVersion"
+	testCompile "commons-beanutils:commons-beanutils:$commonsBeanUtilsVersion"	
+}

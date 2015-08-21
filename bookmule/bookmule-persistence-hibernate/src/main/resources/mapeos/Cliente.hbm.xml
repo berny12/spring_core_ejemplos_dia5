@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.synergyj.bookmule.core.domain">
+    <class name="Cliente" table="CLIENTE">
+        <id name="id" column ="CLIENTE_ID">
+            <generator class="identity" />
+        </id>
+        <property name="nombre" column ="NOMBRE" />
+        <property name="apellidoPaterno" column ="APELLIDO_PATERNO" />
+        <property name="apellidoMaterno" column ="APELLIDO_MATERNO" />
+        <property name="email" column="EMAIL" />
+        <property name="rfc" column ="RFC" />
+        <property name="telefono" column="TELEFONO" />
+        <property name="direccion" column="DIRECCION" />
+        <property name="usuario" column="USUARIO" />
+        <property name="password" column="PASSWORD" />
+        <set name="tarjetasCredito" table="TARJETA_CREDITO" cascade="save-update" lazy="true">
+            <key column ="CLIENTE_ID" />
+            <one-to-many class="TarjetaCredito" />
+        </set>
+        <property name="tipoCliente" type="tipoCliente" column="TIPO_CLIENTE_ID"/>
+        <property name="clienteFrecuenteId" column ="CLIENTE_FRECUENTE_ID" />
+    </class>
+</hibernate-mapping>

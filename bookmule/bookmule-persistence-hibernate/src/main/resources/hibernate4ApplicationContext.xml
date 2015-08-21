@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<context:component-scan base-package="com.synergyj.bookmule.persistence.repository.hibernate" />
+
+	<context:property-placeholder location="classpath:jdbc.properties" />
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="${bookmule.driver}" />
+		<property name="url" value="${bookmule.url}" />
+		<property name="username" value="${bookmule.username}" />
+		<property name="password" value="${bookmule.password}" />
+	</bean>
+
+	<!-- observar el paquete, para hibernate 4 -->
+	<!--TODO A) Configurar este bean, empleando los mapeos del elemento list -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mappingResources">
+			<list>
+				<value>mapeos/Enum.hbm.xml</value>
+				<value>mapeos/Libro.hbm.xml</value>
+				<value>mapeos/Editorial.hbm.xml</value>
+				<value>mapeos/Autor.hbm.xml</value>
+				<value>mapeos/Proveedor.hbm.xml</value>
+				<value>mapeos/ImagenLibro.hbm.xml</value>
+				<value>mapeos/TarjetaCredito.hbm.xml</value>
+				<value>mapeos/Cliente.hbm.xml</value>
+				<value>mapeos/Banco.hbm.xml</value>
+				<value>mapeos/OrdenCompra.hbm.xml</value>
+				<value>mapeos/DetalleOrdenCompra.hbm.xml</value>
+				<value>mapeos/Promocion.hbm.xml</value>
+				<value>mapeos/HistoricoOrdenCompra.hbm.xml</value>
+				<value>mapeos/Pedido.hbm.xml</value>
+				<value>mapeos/DetallePedido.hbm.xml</value>
+				<value>mapeos/HistoricoPedido.hbm.xml</value>
+				<value>mapeos/Factura.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
+				<prop key="hibernate.format_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- observar el transaction manager para hibernate 4 -->
+	<!--TODO B) Especificar el tx Manager para Hibernate 4 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+
+</beans>

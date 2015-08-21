@@ -20,7 +20,7 @@
 	</bean>
 	
 	<!-- TODO A) Habilitar el soporte de @Transactional -->
-	
+	<tx:annotation-driven/>
 	
 	
 	<!-- PlatformTransactionManager -->

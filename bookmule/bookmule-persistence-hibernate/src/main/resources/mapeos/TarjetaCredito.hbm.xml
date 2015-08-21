@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.synergyj.bookmule.core.domain">
+    <class name="TarjetaCredito" table="TARJETA_CREDITO">
+        <id name="id" column ="TARJETA_CREDITO_ID">
+            <generator class="identity" />
+        </id>
+        <property name="numeroTarjeta" column ="NUMERO_TARJETA" />
+        <property name="mesExpiracion" column ="MES_EXPIRACION" />
+        <property name="anioExpiracion" column ="ANIO_EXPIRACION" />
+        <property name="numeroSeguridad" column ="NUMERO_SEGURIDAD" />
+        <property name="tipoTarjeta" type="tipoTarjeta" column ="TIPO_TARJETA" />
+        <many-to-one name="banco" class="Banco" column ="BANCO_ID" cascade="none" />
+    </class>
+</hibernate-mapping>

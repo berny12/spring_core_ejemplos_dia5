@@ -18,8 +18,16 @@
 		<tx:attributes>
 			<!-- todos los metodos que empiecen por 'get' son read-only -->
 			<tx:method name="get*" read-only="true" />
+			
+			<!-- agregams que realize un roolbacj si hay una exceptcion -->
+			<tx:method name="getMoreStrings" rollback-for="com.synergyj.cursos.spring.service.BusinessExecption" />
+			
+			<!-- se agrega isolationlevel para metodo fooupdate -->
+			<tx:method name="updateFoo" isolation="DEFAULT" propagation="REQUIRED" timeout="1"/>
+			
 			<!-- los otros metodos usan la configuracion por default -->
 			<tx:method name="*" />
+			
 		</tx:attributes>
 	</tx:advice>
 

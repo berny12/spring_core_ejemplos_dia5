@@ -1,0 +1,3 @@
+include 'bookmule-core-domain', 'bookmule-core-services', 'bookmule-persistence',
+'bookmule-persistence-jdbc','bookmule-persistence-hibernate',
+'bookmule-web','bookmule-web-sin-spring-mvc'

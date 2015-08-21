@@ -28,9 +28,9 @@ import com.synergyj.cursos.spring.service.TransaccionService;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("/sinTransaccionesAppContext.xml")
+// @ContextConfiguration("/sinTransaccionesAppContext.xml")
 // @ContextConfiguration("/txAppContext.xml")
-// @ContextConfiguration("/txDetalleAppContext.xml")
+@ContextConfiguration("/txAnotacionesAppContext.xml")
 public class TransactionServiceTestCase {
 
 	/**

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.synergyj.bookmule.core.domain">
+	<class name="Libro" table="LIBRO">
+		<id name="id" type="java.lang.Long" column="LIBRO_ID">
+			<generator class="identity" />
+		</id>
+		<property name="titulo" />
+		<property name="edicion" />
+		<property name="isbn" />
+		<property name="codigoColor" column="CODIGO_COLOR" />
+		<property name="codigoClasificacion" column="CODIGO_CLASIFICACION" />
+		<property name="numeroEjemplares" column="NUMERO_EJEMPLARES" />
+		<property name="precioVenta" column="PRECIO_VENTA" />
+		<property name="statusLibro" type="statusLibro" column="STATUS_LIBRO_ID" />
+		<many-to-one name="editorial" class="Editorial" column="EDITORIAL_ID" cascade="none" lazy="false" />
+		<set name="categorias" table="CATEGORIA_LIBRO" lazy="false">
+			<key column="LIBRO_ID" />
+			<element type="categoria" column="CATEGORIA_ID" />
+		</set>
+		<!-- set name="autores" table="AUTOR_LIBRO" cascade="none">
+			<key column="LIBRO_ID" />
+			<many-to-many column="AUTOR_ID" class="Autor" />
+		</set>
+		<set name="proovedores" table="PROVEEDOR_LIBRO">
+			<key column="LIBRO_ID" />
+			<many-to-many column="PROVEEDOR_ID" class="Proveedor" />
+		</set>
+		<list name="imagenes" table="IMAGEN_LIBRO" cascade="save-update" lazy="true">
+			<key column="LIBRO_ID" />
+			<list-index column="NUM_IMAGEN" base="0" />
+			<composite-element class="ImagenLibro"/>
+		</list-->
+	</class>
+</hibernate-mapping>

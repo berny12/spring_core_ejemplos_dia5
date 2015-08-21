@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.synergyj.bookmule.core.domain.Autor" table="AUTOR">
+        <id name="id" column="AUTOR_ID">
+            <generator class="identity" />
+        </id>
+        <property name="nombre" column="NOMBRE" />
+        <property name="apellidoPaterno" column ="APELLIDO_PATERNO" />
+        <property name="apellidoMaterno" column ="APELLIDO_MATERNO" />
+    </class>
+</hibernate-mapping>

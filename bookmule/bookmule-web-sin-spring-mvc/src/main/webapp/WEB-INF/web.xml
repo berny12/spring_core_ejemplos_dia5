@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+
+   <display-name>Spring MVC</display-name>
+
+   <!-- Con este parametro indicamos donde buscar los archivos donde se define el 
+      AppCtx de Spring, pueden ser uno o más. En caso de no existir este parámetro por 
+      default se busca en /WEB-INF/applicationContext.xml -->
+
+   <!-- TODO A) Configurar contextConfigLocation -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath:/hibernate4ApplicationContext.xml,
+			classpath:/serviceAppcontext.xml
+		</param-value>
+	</context-param>
+
+   <!-- Este listener se encarga de inicializar todo el contenedor de Spring y mantener 
+      una variable en el ServletContext que apunta a dicho contenedor -->
+
+   <!-- TODO B) Configurar ContextLoaderListener -->
+	<listener>
+	
+		<listener-class>org.springframework.web.context.ContextLoaderListener </listener-class>
+	
+	</listener>
+
+   <welcome-file-list>
+      <welcome-file>/index.jsp</welcome-file>
+   </welcome-file-list>
+
+</web-app>

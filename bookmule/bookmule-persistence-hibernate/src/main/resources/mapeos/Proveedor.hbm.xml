@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.synergyj.bookmule.core.domain.Proveedor" table="PROVEEDOR">
+        <id name="id" column="PROVEEDOR_ID">
+            <generator class="identity" />
+        </id>
+        <property name="nombre" column ="NOMBRE" />
+        <property name="direccion" column="DIRECCION" />
+        <property name="urlPedidos" column ="URL_PEDIDOS" />
+    </class>
+</hibernate-mapping>

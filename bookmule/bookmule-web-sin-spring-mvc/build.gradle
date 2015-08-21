@@ -1,0 +1,33 @@
+apply plugin: 'war'
+apply plugin: 'org.akhikhl.gretty'
+
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies{
+   classpath 'org.akhikhl.gretty:gretty:+'
+   
+  }
+}
+//configuracion del plugin del classpath
+gretty{
+	contextPath '/'
+	classPath 'src/test/resources'
+	//si hay un cambio se refresca la aplicacion
+	recompileOnSourceChange true
+}
+
+dependencies {
+	compile project(':bookmule-core-services')
+	compile project(':bookmule-persistence-hibernate')
+	
+	compile "org.springframework:spring-web:$springVersion"
+	
+	providedCompile "javax.servlet:javax.servlet-api:$servletAPI"
+	
+	runtime "displaytag:displaytag:$displayTagVersion"
+	
+	
+}
+

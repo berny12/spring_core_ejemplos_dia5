@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.synergyj.bookmule.core.domain">
+    <class name="HistoricoPedido" table="HISTORICO_STATUS_PEDIDO">
+        <id name="id" column ="HISTORICO_STATUS_PEDIDO_ID" >
+            <generator class="identity" />
+        </id>
+        <property name="pedidoId" column="PEDIDO_ID" />
+        <property name="fechaStatus" column ="FECHA_STATUS" />
+        <property name="statusPedido" type="statusPedido"/>
+    </class>
+</hibernate-mapping>

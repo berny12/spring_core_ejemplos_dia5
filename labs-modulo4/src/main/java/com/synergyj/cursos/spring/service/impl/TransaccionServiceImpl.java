@@ -15,6 +15,7 @@ import com.synergyj.cursos.spring.service.TransaccionService;
 public class TransaccionServiceImpl implements TransaccionService {
 
 	/**
+	 * 
 	 * Logger para todas las instancias de la clase
 	 */
 	private static final Logger log = LoggerFactory
@@ -41,6 +42,13 @@ public class TransaccionServiceImpl implements TransaccionService {
 	@Override
 	public void updateFoo(String foo) {
 		log.debug("en updateFoo, actualizando ..");
+		try {
+			log.debug("durmiendose 5 segundo...");
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		log.debug("proceso concluido");
 
 	}

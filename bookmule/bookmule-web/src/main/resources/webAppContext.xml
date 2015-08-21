@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context="http://www.springframework.org/schema/context"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+   <!--TODO B) Lab 2 configurar el escaneo para resolver controllers. -->
+	<context:component-scan base-package="com.synergyj.cursos.spring.web.controller"></context:component-scan>
+
+   <context:component-scan base-package="com.synergyj.cursos.spring.web.validator" />
+
+   <!-- Para el mapeo de paths que usan matrixVariable se requiere personalizar el 
+      atributo removeSemicolonContent, RequestMappingHandlerAdapter debe incluirse en el 
+      IoC. De no requerirse matrixVariable, estos 2 bean poeden omitirse. -->
+   <bean
+      class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+      <property name="removeSemicolonContent" value="false" />
+
+   </bean>
+
+   <bean
+      class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+   </bean>
+
+   <!-- TODO A) Lab 3 Configurar ViewResolver -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+
+   <!-- TODO F) Lab 4 Configurar bean que contiene los mensajes de validacion: validator.properties, 
+      ubicado en el classpath, se pueden especificar varios separados por comas -->
+	<bean id="messageSource" 
+	      class="org.springframework.context.support.ResourceBundleMessageSource"
+	       >
+	       <property name="basename" value="validator"></property>
+	</bean>   
+
+   <!--TODO  C) Lab 5  Condifurar este bean 
+   <bean id="multipartResolver" >
+      
+   </bean>
+   -->
+   <!-- TODO D) Lab 5, mapear sin pasar por controller, y mostrar la vista  /imagenes/capturaImagenes , 
+   habilitar el namespace mvc -->
+   
+   <!-- TODO E) Lab 5 Configurar el interceptor para el path /bookmule/imagenes/guardaImagenes-->
+  
+   <!-- TODO F) Lab 5 Agregar el bean para que funcione el manejador de excepciones-->
+   
+
+</beans>
